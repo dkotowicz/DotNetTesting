@@ -1,0 +1,18 @@
+﻿@model MVC_ASP.Models.Person
+
+<h2 id="Title">Usuwanie osoby</h2>
+@using (Html.BeginForm("DeleteConfirmed", "Person", new { id = Model.personId }, FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.personId)
+    @Html.HiddenFor(model => model.adresId)
+    @Html.LabelFor(model => model.imie) @Html.DisplayFor(model => model.imie, new { id = "imie" }) <br />
+    @Html.LabelFor(model => model.nazwisko) @Html.DisplayFor(model => model.nazwisko) <br />
+    @Html.LabelFor(model => model.pesel) @Html.DisplayFor(model => model.pesel) <br />
+
+    @Html.Label("Usunąć wybraną osobę? ")
+    <br />
+    <input type="submit" value="Usuń" class="btn btn-default" />
+}
+
+

@@ -1,0 +1,31 @@
+﻿@model MVC_ASP.ViewModels.PersonAdres
+
+<h2>@ViewBag.Napis</h2>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.nazwisko) @Html.TextBoxFor(model => model.nazwisko, new { id = "nazwisko" })
+    @Html.ValidationMessageFor(model => model.nazwisko, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.imie) @Html.TextBoxFor(model => model.imie, new { id = "imie" })
+    @Html.ValidationMessageFor(model => model.imie, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.pesel) @Html.TextBoxFor(model => model.pesel, new { id = "pesel" })
+    @Html.ValidationMessageFor(model => model.pesel, "", new { @class = "text-danger" })  <br />
+
+    @Html.LabelFor(model => model.miasto) @Html.TextBoxFor(model => model.miasto)
+    @Html.ValidationMessageFor(model => model.miasto, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.ulica) @Html.TextBoxFor(model => model.ulica)
+    @Html.ValidationMessageFor(model => model.ulica, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.nrBloku) @Html.TextBoxFor(model => model.nrBloku)
+    @Html.ValidationMessageFor(model => model.nrBloku, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.nrMieszkania) @Html.TextBoxFor(model => model.nrMieszkania)
+    @Html.ValidationMessageFor(model => model.nrMieszkania, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.kodPocztowy) @Html.TextBoxFor(model => model.kodPocztowy)
+    @Html.ValidationMessageFor(model => model.kodPocztowy, "", new { @class = "text-danger" })  <br />
+
+    <input type="submit" value="Dodaj" class="btn btn-default" name="dodaj" />
+}

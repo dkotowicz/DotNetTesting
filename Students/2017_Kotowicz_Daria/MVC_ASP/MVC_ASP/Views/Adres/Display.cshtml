@@ -1,0 +1,10 @@
+﻿@model MVC_ASP.Models.Adres
+
+<h2 id="Title">Adres osoby</h2>
+@Html.LabelFor(model => model.miasto) @Html.DisplayFor(model => model.miasto) <br />
+@Html.LabelFor(model => model.ulica) @Html.DisplayFor(model => model.ulica) <br />
+@Html.LabelFor(model => model.nrBloku) @Html.DisplayFor(model => model.nrBloku) <br />
+@Html.LabelFor(model => model.nrMieszkania) @Html.DisplayFor(model => model.nrMieszkania) <br />
+@Html.LabelFor(model => model.kodPocztowy) @Html.DisplayFor(model => model.kodPocztowy) <br />
+
+<button class="btn btn-default" onclick="location.href='@Url.Action("Edit", "Adres", new { id = Model.adresId })';return false;">Edytuj</button>

@@ -1,0 +1,25 @@
+﻿@model MVC_ASP.Models.Adres
+
+<h2>Edycja adresu osoby</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.adresId)
+
+    @Html.LabelFor(model => model.miasto) @Html.TextBoxFor(model => model.miasto)
+    @Html.ValidationMessageFor(model => model.miasto, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.ulica) @Html.TextBoxFor(model => model.ulica)
+    @Html.ValidationMessageFor(model => model.ulica, "", new { @class = "text-danger" })  <br />
+
+    @Html.LabelFor(model => model.nrBloku) @Html.TextBoxFor(model => model.nrBloku)
+    @Html.ValidationMessageFor(model => model.nrBloku, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.nrMieszkania) @Html.TextBoxFor(model => model.nrMieszkania)
+    @Html.ValidationMessageFor(model => model.nrMieszkania, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.kodPocztowy) @Html.TextBoxFor(model => model.kodPocztowy)
+    @Html.ValidationMessageFor(model => model.kodPocztowy, "", new { @class = "text-danger" })  <br />
+
+    <input type="submit" value="Zapisz" class="btn btn-default" />
+}

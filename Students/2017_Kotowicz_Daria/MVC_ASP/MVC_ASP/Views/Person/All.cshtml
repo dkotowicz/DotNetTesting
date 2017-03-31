@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MVC_ASP.Models.Person>
+@{
+    ViewBag.Title = "All";
+}
+<h2 name="Title">Lista wszystkich osób</h2>
+<table class="table">
+    <tr class="header">
+        <th>Nazwisko</th>
+        <th>Imię</th>
+        <th>Pesel</th>
+    </tr>
+    @foreach (var osoba in Model)
+            {
+        <tr>
+            <td class="data">@osoba.nazwisko</td>
+            <td class="data">@osoba.imie</td>
+            <td>@osoba.pesel</td>
+            <td>
+                <button class="btn btn-default" name="sprAdres" onclick="location.href='@Url.Action("DisplayById", "Adres", new { id = osoba.adresId })';return false;">Sprawdź adres</button>
+                <button class="btn btn-default" name="usunPerson" onclick="location.href='@Url.Action("Delete", "Person", new { id = osoba.personId })';return false;"> Usun</button>
+                <button class="btn btn-default" name="edytuj" onclick="location.href='@Url.Action("Edit", "Person", new { id = osoba.personId })';return false;">Edytuj dane</button>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<button class="btn btn-default" onclick="location.href='@Url.Action("DisplayByPeselNull", "Person")';return false;">Wyświetl osób które nie mają peselu</button>
+<br /> <br />
+<button class="btn btn-default" onclick="location.href='@Url.Action("All", "Person")';return false;">Wyświetl wszystkich osób</button>
+<br /><br />
+<button class="btn btn-default" onclick="location.href='@Url.Action("Add", "Person")';return false;">Dodaj nową osobę</button>
+
+
+

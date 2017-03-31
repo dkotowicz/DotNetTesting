@@ -1,0 +1,19 @@
+﻿@model MVC_ASP.Models.Person
+
+<h2>Edycja danych o osobie</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.personId)
+
+    @Html.LabelFor(model => model.nazwisko) @Html.TextBoxFor(model => model.nazwisko)
+    @Html.ValidationMessageFor(model => model.nazwisko, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.imie) @Html.TextBoxFor(model => model.imie)
+    @Html.ValidationMessageFor(model => model.imie, "", new { @class = "text-danger" }) <br />
+
+    @Html.LabelFor(model => model.pesel) @Html.TextBoxFor(model => model.pesel)
+    @Html.ValidationMessageFor(model => model.pesel, "", new { @class = "text-danger" })  <br />
+
+    <input type="submit" value="Zapisz" class="btn btn-default" />
+}

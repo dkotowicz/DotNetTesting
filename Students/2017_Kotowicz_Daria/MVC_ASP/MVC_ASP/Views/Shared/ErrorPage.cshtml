@@ -1,0 +1,19 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ErrorPage</title>
+</head>
+<body>
+    <div> 
+        Możesz przejść tylko do listy osób
+        <button class="btn btn-default" onclick="location.href='@Url.Action("All", "Person")';return false;">Lista osób</button>
+    </div>
+</body>
+</html>
